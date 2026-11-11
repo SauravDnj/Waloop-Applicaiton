@@ -1,0 +1,72 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# generated native folders (Continuous Native Generation)
+/ios
+/android
+.kotlin/
+*.orig.*
+
+# Signing keys and store credentials: never commit
+*.jks
+*.keystore
+*.p8
+*.p12
+*.key
+*.pem
+*.mobileprovision
+credentials.json
+credentials/
+*service-account*.json
+play-store*.json
+
+# Firebase config: each deployment registers its own app (see README → Setup)
+google-services.json
+GoogleService-Info.plist
+
+# Environment: copy .env.example to .env and fill in your own values
+.env
+.env.*
+!.env.example
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+*.log
+
+# typescript
+*.tsbuildinfo
+
+# Build outputs (APK / AAB / IPA, test coverage)
+*.apk
+*.aab
+*.ipa
+build/
+coverage/
+
+# Internal content, not part of the app
+example
+marketing/
+store-listing/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
+.claude/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/

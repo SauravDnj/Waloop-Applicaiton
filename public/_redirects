@@ -1,0 +1,8 @@
+# Netlify and Cloudflare Pages. Real files (and clean URLs like /contacts → contacts.html)
+# are served first; these rules only catch the pages with an id in the address.
+/lead/:id              /lead/[id].html              200
+/chat/:id              /chat/[id].html              200
+/board/:slug           /board/[slug].html           200
+/campaigns/:id         /campaigns/[id].html         200
+/channels/:id          /channels/[id].html          200
+/whatsapp/channel/:id  /whatsapp/channel/[id].html  200

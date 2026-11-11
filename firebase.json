@@ -1,0 +1,48 @@
+{
+  "hosting": {
+    "public": "dist",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "ignore": [
+      "firebase.json",
+      "**/.*"
+    ],
+    "rewrites": [
+      {
+        "source": "/lead/*",
+        "destination": "/lead/[id].html"
+      },
+      {
+        "source": "/chat/*",
+        "destination": "/chat/[id].html"
+      },
+      {
+        "source": "/board/*",
+        "destination": "/board/[slug].html"
+      },
+      {
+        "source": "/campaigns/*",
+        "destination": "/campaigns/[id].html"
+      },
+      {
+        "source": "/whatsapp/channel/*",
+        "destination": "/whatsapp/channel/[id].html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/_expo/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      }
+    ]
+  },
+  "react-native": {
+    "messaging_android_notification_channel_id": "messages",
+    "messaging_android_notification_color": "@color/notification_icon_color"
+  }
+}

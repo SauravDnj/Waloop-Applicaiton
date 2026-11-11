@@ -1,0 +1,28 @@
+# Apache (shared hosting, cPanel…): upload the contents of dist/ with this file.
+Options -MultiViews
+RewriteEngine On
+DirectorySlash Off
+
+# Real files first.
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Clean URLs: /contacts → contacts.html, /settings/services → settings/services.html
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# Pages with an id in the address use their page template.
+RewriteRule ^lead/[^/]+/?$ lead/[id].html [L]
+RewriteRule ^chat/[^/]+/?$ chat/[id].html [L]
+RewriteRule ^board/[^/]+/?$ board/[slug].html [L]
+RewriteRule ^campaigns/[^/]+/?$ campaigns/[id].html [L]
+RewriteRule ^whatsapp/channel/[^/]+/?$ whatsapp/channel/[id].html [L]
+
+ErrorDocument 404 /404.html
+
+# Hashed scripts and assets never change: cache them for a year.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|png|jpg|svg|ttf|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>

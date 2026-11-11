@@ -1,0 +1,11 @@
+# Public pages can be indexed; everything behind sign-in is private.
+User-agent: *
+Allow: /$
+Allow: /access
+Allow: /login
+Allow: /signup
+Allow: /forgot-password
+Allow: /accept-invite
+Disallow: /
+
+Sitemap: https://dialerapp.com.bot/sitemap.xml

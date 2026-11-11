@@ -1,0 +1,15 @@
+{
+  "buildCommand": "npm run build:web",
+  "outputDirectory": "dist",
+  "framework": null,
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/lead/:id", "destination": "/lead/[id]" },
+    { "source": "/chat/:id", "destination": "/chat/[id]" },
+    { "source": "/board/:slug", "destination": "/board/[slug]" },
+    { "source": "/campaigns/:id", "destination": "/campaigns/[id]" },
+    { "source": "/channels/:id", "destination": "/channels/[id]" },
+    { "source": "/whatsapp/channel/:id", "destination": "/whatsapp/channel/[id]" }
+  ],
+  "headers": [{ "source": "/_expo/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] }]
+}
